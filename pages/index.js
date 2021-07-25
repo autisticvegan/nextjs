@@ -1,5 +1,21 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import Image from 'next/image'
+import useInterval from 'react-useinterval'
+import { useState } from 'react';
+
+function Counter(props) {
+  let [count, setCount] = useState(0.0);
+ 
+  const formula = (props.increaseAmount * .05) / (525600 *  6000)
+
+  const increaseCount = amount => {
+    setCount(count + amount);
+  };
+ 
+  useInterval(increaseCount, 10, formula);
+  return <h1>${count.toFixed(2)}</h1>;
+}
 
 export default function Home() {
   return (
@@ -11,41 +27,43 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Penis
+          Lol Passive Income
         </h1>
 
         <p className={styles.description}>
-          Does hard work lead to success?
+          💸🤑💸 Since you opened this site, these people have made this much money PASSIVELY with 5% APY
         </p>
-
+      
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+            <div>
+            <h3>Jeff</h3>
+            <Image src={"/jeff.jpg"} alt={"haha"} width={200} height={200}/>
+            <Counter increaseAmount={209200000000}></Counter>
+          </div>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+          <div>
+            <h3>Bill</h3>
+            <Image src={"/bill.jpg"} alt={"haha"} width={200} height={200}/>
+            <Counter increaseAmount={131200000000}></Counter>
+          </div>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+          <div>
+            <h3>Elon</h3>
+            <Image src={"/elon.jpg"} alt={"haha"} width={200} height={200}/>
+            <Counter increaseAmount={160100000000}></Counter>
+          </div>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          <div>
+            <h3>Mark</h3>
+            <Image src={"/mark.jpg"} alt={"haha"} width={200} height={200}/>
+            <Counter increaseAmount={133000000000}></Counter>
+          </div>
+
+          <div>
+            <h3>Bernard</h3>
+            <Image src={"/bernard.jpg"} alt={"haha"} width={200} height={200}/>
+            <Counter increaseAmount={191400000000}></Counter>
+          </div>
         </div>
       </main>
 
