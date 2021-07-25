@@ -7,14 +7,15 @@ import { useState } from 'react';
 function Counter(props) {
   let [count, setCount] = useState(0.0);
  
-  const formula = (props.increaseAmount * .05) / (525600 *  6000)
+  const formula = (props.increaseAmount * .05) / (525600 *  3000)
 
   const increaseCount = amount => {
     setCount(count + amount);
   };
  
-  useInterval(increaseCount, 10, formula);
-  return <h1>${count.toFixed(2)}</h1>;
+  useInterval(increaseCount, 20, formula);
+  const actualCount = (count > 100000) ? count.toFixed(0) : count.toFixed(2);
+  return <h1>${actualCount}</h1>;
 }
 
 export default function Home() {
@@ -64,6 +65,37 @@ export default function Home() {
             <Image src={"/bernard.jpg"} alt={"haha"} width={200} height={200}/>
             <Counter increaseAmount={191400000000}></Counter>
           </div>
+
+          <div>
+            <h3>Harrison</h3>
+            <Image src={"/h.jpg"} alt={"haha"} width={200} height={200}/>
+            <Counter increaseAmount={300000000}></Counter>
+          </div>
+
+          <div>
+            <h3>Warren</h3>
+            <Image src={"/w.jpg"} alt={"haha"} width={200} height={200}/>
+            <Counter increaseAmount={101100000000}></Counter>
+          </div>
+
+          <div>
+            <h3>Oprah</h3>
+            <Image src={"/o.jpg"} alt={"haha"} width={200} height={200}/>
+            <Counter increaseAmount={2700000000}></Counter>
+          </div>
+
+          <div>
+            <h3>Kanye</h3>
+            <Image src={"/kkkkk.jpg"} alt={"haha"} width={200} height={200}/>
+            <Counter increaseAmount={1800000000}></Counter>
+          </div>
+
+          <div>
+            <h3>Barack</h3>
+            <Image src={"/oo.jpg"} alt={"haha"} width={200} height={200}/>
+            <Counter increaseAmount={70000000}></Counter>
+          </div>
+
         </div>
       </main>
 
